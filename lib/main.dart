@@ -10,7 +10,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ArticleModelAdapter());
   await Hive.openBox<ArticleModel>('saved_articles');
-  runApp(ChangeNotifierProvider<MyNewsProvider>(
+  runApp(
+      ChangeNotifierProvider<MyNewsProvider>(
       create: (context) {
         final provider = MyNewsProvider();
         provider.getTheme();
